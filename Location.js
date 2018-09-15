@@ -22,7 +22,7 @@ export default class geoLocation extends Component {
         errorMessage: 'Oops, this will not work on Sketch in an Android emulator. Try it on your device!',
       });
     } else {
-      this._getLocationAsync();
+      this.props.getLocationFunction(this._getLocationAsync)
     }
   }
 
@@ -33,11 +33,9 @@ export default class geoLocation extends Component {
         errorMessage: 'Permission to access location was denied',
       });
     }
-    setInterval(async () => {
       let location = await Location.getCurrentPositionAsync({});
       this.setState({ location });
-    }, 100);
-
+      return location
   };
 
   render() {

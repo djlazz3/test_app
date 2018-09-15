@@ -1,20 +1,24 @@
-const{DeviceEventEmitter} = require ('react-native');
-const RactNativeHeading = require('react-native-heading');
+import React from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { FileSystem, FaceDetector, MediaLibrary, Permissions } from 'expo';
 
-componentDidMount(){
-  ReactNativeHeading.start(1).then(didStart => {
+export default class heading extends React.Component {
+  const DeviceEventEmitter = require ('react-native');
+  const RactNativeHeading = require('react-native-heading');
 
-    this.setState({
-      headingIsSuppoorted: didStart,
+  componentDidMount() {
+    ReactNativeHeading.start(1)
+    .then(didStart => {
+      this.setState({
+        headingIsSuppoorted: didStart,
+      })
     })
-  })
-   DeviceEventEmitter.addListener('headingUpdated', data => {
-
-     console.log('new heading is:', data.heading);
-   });
-}
-componentWillUnmount(){
-  ReactNativeHeading.stop();
-  DeviceEventEmitter.removeAllListeners('headingUpdated')
-
+     DeviceEventEmitter.addListener('headingUpdated', data => {
+       console.log('New heading is:', data.heading);
+     });
+  }
+  componentWillUnmount(){
+    ReactNativeHeading.stop();
+    DeviceEventEmitter.removeAllListeners('headingUpdated');
+  }
 }
