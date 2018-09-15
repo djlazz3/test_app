@@ -1,15 +1,13 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-
-import StuffComponent from './StuffComponent'
-import StatelessFunctionalComponent from './StatelessFunctionalComponent'
+import { Text, View } from 'react-native'
+import Location from 'location'
 
 export default class App extends React.Component {
+
   render() {
     return (
-      <View>
-        <StuffComponent visible />
-        <StatelessFunctionalComponent stuff="dank memes"/>
+      <View style={{paddingTop: 20}}>
+
       </View>
     );
   }
