@@ -13,7 +13,7 @@ import {
 import GalleryScreen from './GalleryScreen';
 import Photo from './Photo';
 
-import { 
+import {
   Ionicons,
   MaterialIcons,
   Foundation,
@@ -38,9 +38,9 @@ const flashIcons = {
 };
 
 export default class CameraComponent extends React.Component {
-    constructor(props) { 
+    constructor(props) {
        super(props)
-       
+
         this.state = {
             flash: 'off',
             zoom: 0,
@@ -214,24 +214,24 @@ export default class CameraComponent extends React.Component {
     );
   }
 
-  renderFaces = () => 
+  renderFaces = () =>
     <View style={styles.facesContainer} pointerEvents="none">
       {this.state.faces.map(this.renderFace)}
     </View>
 
-  renderLandmarks = () => 
+  renderLandmarks = () =>
     <View style={styles.facesContainer} pointerEvents="none">
       {this.state.faces.map(this.renderLandmarksOfFace)}
     </View>
 
-  renderNoPermissions = () => 
+  renderNoPermissions = () =>
     <View style={styles.noPermissions}>
       <Text style={{ color: 'white' }}>
         Camera permissions not granted - cannot open camera preview.
       </Text>
     </View>
 
-  renderTopBar = () => 
+  renderTopBar = () =>
     <View
       style={styles.topBar}>
       <TouchableOpacity style={styles.toggleButton} onPress={this.toggleFacing}>
@@ -242,7 +242,7 @@ export default class CameraComponent extends React.Component {
       </TouchableOpacity>
       <TouchableOpacity style={styles.toggleButton} onPress={this.toggleFocus}>
         <Text style={[styles.autoFocusLabel, { color: this.state.autoFocus === 'on' ? "white" : "#6b6b6b" }]}>AF</Text>
-      </TouchableOpacity>   
+      </TouchableOpacity>
     </View>
 
   renderBottomBar = () =>
@@ -258,7 +258,7 @@ export default class CameraComponent extends React.Component {
         >
           <Ionicons name="ios-radio-button-on" size={70} color="white" />
         </TouchableOpacity>
-      </View> 
+      </View>
       <TouchableOpacity style={styles.bottomButton} onPress={this.toggleView}>
         <View>
           <Foundation name="thumbnails" size={30} color="white" />
@@ -293,7 +293,7 @@ export default class CameraComponent extends React.Component {
             </TouchableOpacity>
           </View>
         </View>
-      </View> 
+      </View>
     );
 
   renderCamera = () =>
@@ -393,8 +393,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   bottomButton: {
-    flex: 0.3, 
-    height: 58, 
+    flex: 0.3,
+    height: 58,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -425,7 +425,7 @@ const styles = StyleSheet.create({
   },
   pictureQualityLabel: {
     fontSize: 10,
-    marginVertical: 3, 
+    marginVertical: 3,
     color: 'white'
   },
   pictureSizeContainer: {
